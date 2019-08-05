@@ -61,7 +61,9 @@ int *read_map(char *filename)
     int n = 0;
     int *map = 0;
     char *str;
+    printf("%s", filename);
     FILE *file = fopen(filename, "r");
+    
     if(!file) file_error(filename);
     while((str=fgetl(file))){
         ++n;
