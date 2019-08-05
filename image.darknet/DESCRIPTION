@@ -7,4 +7,4 @@ Version: 0.1.0
 Maintainer: Jan Wijffels <jwijffels@bnosac.be>
 Author: Jan Wijffels and BNOSAC
 Description: Image classification with deep learning models AlexNet, Darknet, VGG-16, Extraction (GoogleNet) and Darknet19. Object detection using the state-of-the art YOLO detection system.
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1

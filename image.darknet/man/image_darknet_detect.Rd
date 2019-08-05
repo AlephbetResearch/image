@@ -4,7 +4,8 @@
 \alias{image_darknet_detect}
 \title{Object detection with YOLO v2 (You only look once)}
 \usage{
-image_darknet_detect(file, object, threshold = 0.3, hier_threshold = 0.5)
+image_darknet_detect(file, object, threshold = 0.3,
+  hier_threshold = 0.5)
 }
 \arguments{
 \item{file}{character string with the full path to the image file}

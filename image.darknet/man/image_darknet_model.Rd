@@ -4,8 +4,8 @@
 \alias{image_darknet_model}
 \title{Specify a model to be used in classification or object detection}
 \usage{
-image_darknet_model(type = c("classify", "detect"), model, weights, labels,
-  resize = TRUE)
+image_darknet_model(type = c("classify", "detect"), model, weights,
+  labels, resize = TRUE)
 }
 \arguments{
 \item{type}{character string, either 'classify' for classification or 'detect' for object detection}
