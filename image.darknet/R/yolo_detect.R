@@ -57,4 +57,5 @@ image_darknet_detect <- function(file, object, threshold = 0.3, hier_threshold =
                   system.file(package = "image.darknet", "include", "darknet"),
                   PACKAGE = "image.darknet")
   invisible()
+  result
 }
