@@ -77,6 +77,7 @@ int darknet_test_detector(char *cfgfile, char *weightfile, char *filename, float
   return(boxes_abovethreshold);
 }
 
+//char* darknet_detect(SEXP modelsetup, SEXP modelweights, SEXP image, SEXP th, SEXP hier_th, SEXP labels, SEXP darknet_root){
 SEXP darknet_detect(SEXP modelsetup, SEXP modelweights, SEXP image, SEXP th, SEXP hier_th, SEXP labels, SEXP darknet_root){
   const char *cfgfile = CHAR(STRING_ELT(modelsetup, 0));
   const char *weightfile = CHAR(STRING_ELT(modelweights, 0));
@@ -99,6 +100,10 @@ SEXP darknet_detect(SEXP modelsetup, SEXP modelweights, SEXP image, SEXP th, SEX
                         thresh, hier_thresh,
                         output_labels,
                         (char *)path);
+  
+  printf("Output_labels\n", output_labels);
+  
   UNPROTECT(1);
-  return(modelsetup);
+ return(modelsetup);
+ //return output_labels;
 }
