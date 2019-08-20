@@ -4,6 +4,10 @@
 #include "cuda.h"
 #include <stdio.h>
 #include <math.h>
+#include <R.h>
+#include <Rinternals.h>
+#include <Rdefines.h>
+
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -252,7 +256,7 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
                     strcat(labelstr, ", ");
                     strcat(labelstr, names[j]);
                 }
-                printf("%s: %.0f%%\n", names[j], dets[i].prob[j]*100);
+                Rprintf("%s: %.0f%%\n", names[j], dets[i].prob[j]*100);
             }
         }
         if(class >= 0){

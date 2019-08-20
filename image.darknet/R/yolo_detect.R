@@ -48,14 +48,15 @@ image_darknet_detect <- function(file, object, threshold = 0.3, hier_threshold =
   }
   threshold <- as.numeric(threshold)
   hier_threshold <- as.numeric(hier_threshold)
-  result <- .Call("darknet_detect", 
+  result <- capture.output(.Call("darknet_detect", 
                   object$cfgfile, 
                   object$weightfile, 
                   file, 
                   threshold, hier_threshold, 
                   object$labels,
                   system.file(package = "image.darknet", "include", "darknet"),
-                  PACKAGE = "image.darknet")
+                  PACKAGE = "image.darknet"))
+  
   invisible()
   result
 }
