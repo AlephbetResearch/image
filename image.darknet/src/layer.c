@@ -1,5 +1,6 @@
 #include "layer.h"
 #include "cuda.h"
+#include "rinclude.h"
 
 #include <stdlib.h>
 

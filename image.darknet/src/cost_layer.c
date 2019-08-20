@@ -2,6 +2,7 @@
 #include "utils.h"
 #include "cuda.h"
 #include "blas.h"
+#include "rinclude.h"
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>

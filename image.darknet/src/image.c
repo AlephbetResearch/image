@@ -2,6 +2,7 @@
 #include "utils.h"
 #include "blas.h"
 #include "cuda.h"
+#include "rinclude.h"
 #include <stdio.h>
 #include <math.h>
 #include <R.h>
@@ -256,7 +257,7 @@ void draw_detections(image im, detection *dets, int num, float thresh, char **na
                     strcat(labelstr, ", ");
                     strcat(labelstr, names[j]);
                 }
-                Rprintf("%s: %.0f%%\n", names[j], dets[i].prob[j]*100);
+                printf("%s: %.0f%%\n", names[j], dets[i].prob[j]*100);
             }
         }
         if(class >= 0){

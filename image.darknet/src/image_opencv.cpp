@@ -4,6 +4,7 @@
 #include "stdlib.h"
 #include "opencv2/opencv.hpp"
 #include "image.h"
+#include "rinclude.h"
 
 using namespace cv;
 

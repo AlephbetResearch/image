@@ -1,5 +1,6 @@
 #include "normalization_layer.h"
 #include "blas.h"
+#include "rinclude.h"
 
 #include <stdio.h>
 

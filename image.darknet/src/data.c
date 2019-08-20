@@ -2,6 +2,7 @@
 #include "utils.h"
 #include "image.h"
 #include "cuda.h"
+#include "rinclude.h"
 
 #include <stdio.h>
 #include <stdlib.h>

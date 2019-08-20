@@ -1,3 +1,4 @@
+#include "rinclude.h"
 #include <stdio.h>
 #include <math.h>
 void col2im_add_pixel(float *im, int height, int width, int channels,

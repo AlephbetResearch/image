@@ -1,6 +1,7 @@
 #include "matrix.h"
 #include "utils.h"
 #include "blas.h"
+#include "rinclude.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -4,6 +4,7 @@
 #include "box.h"
 #include "cuda.h"
 #include "utils.h"
+#include "rinclude.h"
 
 #include <stdio.h>
 #include <assert.h>

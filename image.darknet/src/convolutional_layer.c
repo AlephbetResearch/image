@@ -5,6 +5,7 @@
 #include "col2im.h"
 #include "blas.h"
 #include "gemm.h"
+#include "rinclude.h"
 #include <stdio.h>
 #include <time.h>
 

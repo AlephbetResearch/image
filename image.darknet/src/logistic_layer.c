@@ -2,6 +2,7 @@
 #include "activations.h"
 #include "blas.h"
 #include "cuda.h"
+#include "rinclude.h"
 
 #include <float.h>
 #include <math.h>

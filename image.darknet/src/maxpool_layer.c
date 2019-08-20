@@ -1,5 +1,6 @@
 #include "maxpool_layer.h"
 #include "cuda.h"
+#include "rinclude.h"
 #include <stdio.h>
 
 image get_maxpool_image(maxpool_layer l)
