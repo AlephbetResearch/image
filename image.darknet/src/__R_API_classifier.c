@@ -18,7 +18,6 @@
 image get_image_from_stream(CvCapture *cap);
 #endif
 
-
 void darknet_predict_classifier(char *datacfg, char *cfgfile, char *weightfile, char *filename, int top,
                                 char **pred_lab, double *pred_score, char **names, int resize){
   
@@ -35,7 +34,7 @@ void darknet_predict_classifier(char *datacfg, char *cfgfile, char *weightfile, 
   int i = 0;
   //char **names = get_labels(name_list);
   clock_t time;
-  int *indexes = calloc(top, sizeof(int));
+  int *indexes = (int *)(calloc(top, sizeof(int)));
   char buff[256];
   char *input = buff;
   int size = net->w;
@@ -90,13 +89,24 @@ SEXP darknet_predict(SEXP datasetup, SEXP modelsetup, SEXP modelweights, SEXP im
   
   SEXP pred_labels = PROTECT(allocVector(STRSXP, top));
   SEXP pred_scores = PROTECT(allocVector(REALSXP, top));
+  for(int i = 0; i < top; ++i){
+    if(pred_lab[i])
+    {
+      SET_STRING_ELT(pred_labels, i, mkChar(pred_lab[i]));
+    } else {
+      SET_STRING_ELT(pred_labels, i, mkChar("CLASS NOT FOUND"));
+    }
+    if(pred_score[i])
+    {    
+      REAL(pred_scores)[i] = pred_score[i];
+    } else 
+    {
+      REAL(pred_scores)[i] = 100;
+    }
+  }
   SEXP result = PROTECT(allocVector(VECSXP, 2));
   SET_VECTOR_ELT(result, 0, pred_scores);
   SET_VECTOR_ELT(result, 1, pred_labels);
-  for(int i = 0; i < top; ++i){
-    SET_STRING_ELT(pred_labels, i, mkChar(pred_lab[i]));
-    REAL(pred_scores)[i] = pred_score[i];
-  }
   UNPROTECT(4);
   return(result);
 }
